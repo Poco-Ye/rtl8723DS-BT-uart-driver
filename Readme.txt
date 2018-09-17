@@ -35,7 +35,7 @@ you should modify rtlbt_config file which is described in  support document.
 ===========================================================================================================
 
 
-
+运行rtk_hciattach之后运行hciconfig hci0 up和hciconfig hci0 reset。
 
 
 
