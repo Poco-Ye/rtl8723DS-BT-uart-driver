@@ -56,3 +56,10 @@ else
 	obj-m		:= hci_uart.o
 	hci_uart-y	:= hci_ldisc.o hci_h4.o hci_rtk_h5.o rtk_coex.o
 endif
+
+
+
+export PATH=$PATH:/opt/nationalchip/toolchain-arm_cortex-a7+neon_gcc-5.3.0_glibc-2.22_eabi/bin
+export STAGING_DIR=$PWD/../../openwrt/staging_dir
+export PATH=$PATH:$STAGING_DIR/toolchain-arm_cortex-a7+neon_gcc-5.3.0_glibc-2.22_eabi/bin
+
