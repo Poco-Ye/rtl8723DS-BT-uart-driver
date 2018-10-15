@@ -41,5 +41,18 @@ echo 0 > /sys/class/rfkill/rfkill0/state
 echo 1 > /sys/class/rfkill/rfkill0/state
 
 
+交叉编译：
+ARCH := arm
+CROSS_COMPILE := arm-linux-gnueabihf-
+KSRC := ../../../kernel/
 
-
+ifeq ($(KERNELRELEASE), )
+PWD :=$(shell pwd)
+all:
+	$(MAKE) CROSS_COMPILE=$(CROSS_COMPILE) ARCH=$(ARCH) -C $(KSRC) M=$(shell pwd)  modules
+clean:
+	rm -rf .tmp_versions Module.symvers *.mod.c *.o *.ko .*.cmd Module.markers modules.order
+else
+	obj-m		:= hci_uart.o
+	hci_uart-y	:= hci_ldisc.o hci_h4.o hci_rtk_h5.o rtk_coex.o
+endif
