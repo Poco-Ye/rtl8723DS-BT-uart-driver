@@ -1,0 +1,25 @@
+UI关闭BT，只能保证host端已经完全关闭，bt controller是否真的不再有任何动作，这个是无法保证的。
+
+因而在测试Wi-Fi only TP时，需要确认下btcoex内bt status是否是符合预期。
+
+目前bt 在UI关闭的之后有可能发生scan等动作可以通过config配置去关闭,停止fw的bg scan。
+
+1.对于8761A，8723B卡片，修改以下栏位
+
+0x17A[3] = 1 Effective polarity to indicate power on by HOST_WAKE_BT(0:high 1:low)
+
+0x177[0] = 0 disable TV power on
+
+2.对于8703B，8723D，8822B，8821C等卡片， 修改以下栏位
+
+0x1BE[3] = 1   Background LE scan closable
+
+0x1BB[0] = 0   disable TV power on
+
+ 
+
+修改好config文件，然后push进平台，重新打开下bt ，config才会生效。
+
+config的文件修改，这部分可以请BT同事帮忙修改。
+
+如需要Analysis更多config设定，可以使用RealsilBTConfigFileAnalysis tool来解析。
