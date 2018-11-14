@@ -63,4 +63,4 @@ export PATH=$PATH:/opt/nationalchip/toolchain-arm_cortex-a7+neon_gcc-5.3.0_glibc
 export STAGING_DIR=$PWD/../../openwrt/staging_dir
 export PATH=$PATH:$STAGING_DIR/toolchain-arm_cortex-a7+neon_gcc-5.3.0_glibc-2.22_eabi/bin
 
-cat /proc/net/rtl8723ds/wlan0/btcoex   rtw_version.h
+cat /proc/net/rtl8723ds/wlan0/btcoex  cat proc/net/rtl8723ds/ver_info  rtw_version.h
