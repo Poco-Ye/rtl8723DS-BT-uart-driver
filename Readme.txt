@@ -41,7 +41,7 @@ echo 0 > /sys/class/rfkill/rfkill0/state
 
 
 
-
+<----------------------------------------------bluez------------------------------>
 echo 0 > /sys/class/rfkill/rfkill0/state
 
 sleep 2
@@ -75,6 +75,9 @@ sleep 1
 bluealsa-aplay --profile-a2dp 00:00:00:00:00:00 &
 sleep 1
 hciconfig hci0 class 0x240404
+
+
+<----------------------------------------------bluez------------------------------>
 
 
 交叉编译：
