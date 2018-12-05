@@ -13,11 +13,13 @@ hciconfig $BLUETOOTH_DEVICE noscan
 #hciconfig $BLUETOOTH_DEVICE leadv
 
 # set advertise data
-hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0008 16 02 01 05 03 03 12 18 03 19 C1 03 04 09 52 43 55 05 FF 5D 00 04 00
+#hicitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0008 16 02 01 04 03 03 12 18 03 19 C1 03 04 09 52 43 55 05 FF 5D 00 04 00
+#hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0008 12 11 07 00 00 E0 ff 3c 17 d2 93 8e 48 14 fe 2e 4d a2 12
+hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0008 18 11 07 12 a2 4d 2e fe 14 48 8e 93 d2 17 3c ff e0 00 00 05 09 55 56 57 00
 # set scan response data
-hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0009 04 03 19 C1 03
+#hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0009 04 03 19 C1 03
 # set random address (resolvable private address)
-hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0005 11 02 03 44 55 7F
+hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0005 FF 02 03 44 55 7F
 # set adv parameters
 hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0006 A0 00 A0 00 00 01 00 00 00 00 00 00 00 07 00
 # le enable adv
