@@ -37,6 +37,12 @@ you should modify rtlbt_config file which is described in  support document.
 
 运行rtk_hciattach之后运行hciconfig hci0 up和hciconfig hci0 reset。
 
+----wifi---
+Echo 0 > /sys/class/rkwifi/power
+Echo 1 > /sys/class/rkwifi/power
+----wifi---
+
+
 echo 0 > /sys/class/rfkill/rfkill0/state
 
 
