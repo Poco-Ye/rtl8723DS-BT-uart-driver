@@ -26,3 +26,7 @@ hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x0006 A0 00 A0 00 00 01 00 00 00 00 00 00
 hcitool -i $BLUETOOTH_DEVICE cmd 0x08 0x000a 01
 
 echo "complete"
+
+
+hciconfig hci0 inqparms 18:2048
+hciconfig hci0 pageparms 18:1024
